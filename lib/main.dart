@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/homepage.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
 import 'package:flutter_catalog/utils/routes.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_catalog/widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,16 +12,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //var day = "Tuesday";
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ),
       themeMode: ThemeMode.light,
-      darkTheme: ThemeData(
-        brightness: Brightness.light,
-      ),
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.drakTheme(context),
       home: HomePage(),
       routes: {
         MyRoutes.loginRoute: (context) => LoginPage(),
