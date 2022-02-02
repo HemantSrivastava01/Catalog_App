@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
-  //const imgurl = "https://ibb.co/QJfgnB0";
+  //final imgurl = "https://ibb.co/QJfgnB0";
+  final _url =
+      "https://www.kindpng.com/imgv/imTh_spiderman-venom-youtube-symmetry-area-free-hq-image/#.YfqdzkmyXGQ.link";
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -13,14 +15,23 @@ class MyDrawer extends StatelessWidget {
         color: Colors.lightGreen,
         child: ListView(
           children: [
-            const DrawerHeader(
+            DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
+                // ignore: prefer_const_constructors
                 accountName: Text("Hemant Srivastava"),
+                // ignore: prefer_const_constructors
                 accountEmail: Text("hemant@lpu.co.in"),
                 currentAccountPicture: CircleAvatar(
-                    // backgroundImage: NetworkImage(imgurl),
-                    ),
+                  radius: 65,
+                  backgroundImage:
+                      const AssetImage('assets/images/profile.png'),
+                  child: CircleAvatar(
+                    radius: 65,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: NetworkImage(_url),
+                  ),
+                ),
               ),
             ),
             const ListTile(
